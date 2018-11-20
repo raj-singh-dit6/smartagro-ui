@@ -1,0 +1,10 @@
+<ng-content></ng-content>
+<i class="fas fa-sort" *ngIf="sortDirection.trim() === '' && columnName !== 'icon' 
+    && columnName !== 'expandIcon'">
+</i>
+<i class="fas fa-sort-down" *ngIf="sortDirection === 'asc' && columnName !== 'icon' 
+    && columnName !== 'expandIcon'">
+</i>
+<i class="fas fa-sort-up" *ngIf="sortDirection === 'desc' && columnName !== 'icon' 
+    && columnName !== 'expandIcon'">
+</i>

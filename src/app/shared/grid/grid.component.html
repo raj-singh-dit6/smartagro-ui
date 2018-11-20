@@ -1,0 +1,35 @@
+<div class="page-content-inner ng-scope">
+
+    <!-- Grouping grid -->
+    <section class="panel" *ngIf="!showAll">
+        <div class="card" *ngFor="let key of keys">
+            <div role="tab " class="card-header header">
+                <h5 style="margin-bottom:0">
+                    <a (click)="toggle(key)">
+                        <i class="far fa-arrow-circle-right" *ngIf="!map[key].show" style="color:white"></i>
+                        <i class="far fa-arrow-circle-down" *ngIf="map[key].show" style="color:white"></i>&nbsp; {{groupBy.label}}:
+                        {{key}}
+                    </a>
+                    <span class="count-number-group">{{map[key].data.length}}</span>
+                </h5>
+            </div>
+            <div class="card-body collapse show" *ngIf="map[key].show">
+                <app-grid-table [grid]="this " [columns]="columns " [displayData]="map[key].data">
+                </app-grid-table>
+            </div>
+        </div>
+        <div *ngIf="keys.length < 1" class="no-data">
+            <img src="assets/img/no-data.jpg" />
+        </div>
+    </section>
+
+    <!-- Simple grid -->
+    <section class="panel" *ngIf="showAll">
+        <div class="card ">
+            <div class="card-body collapse show ">
+                <app-grid-table [grid]="this " [columns]="columns " [displayData]="displayData">
+                </app-grid-table>
+            </div>
+        </div>
+    </section>
+</div>

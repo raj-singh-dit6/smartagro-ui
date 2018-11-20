@@ -1,0 +1,44 @@
+<table style="width:100%" id="element" class="grid" sortable-table (sorted)="onSorted($event)">
+    <thead>
+        <tr class="grid" style="border-bottom: 2px solid #dbeff5 !important;">
+            <ng-template ngFor let-col [ngForOf]="columns">
+                <th [ngStyle]="col.headerStyle">
+                    <div *ngIf="!col['headerComponent']" sortable-column="{{col.id}}" style="cursor:pointer;">
+                        {{col.value}}
+                    </div>
+                    <div *ngIf="col['headerComponent']" ctrl-factory [grid]="grid" [model]="col['headerComponent']" [data]="displayData" [col]="col"
+                        sortable-column="{{col.id}}" style="cursor:pointer;">
+                    </div>
+                </th>
+            </ng-template>
+        </tr>
+        <tr class="grid">
+            <ng-template ngFor let-col [ngForOf]="columns">
+                <th class="sorting_asc">
+                    <app-grid-filter *ngIf="col.searchable" [grid]="grid" [col]="col"></app-grid-filter>
+                </th>
+            </ng-template>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-template ngFor let-record [ngForOf]="displayData" let-i="index">
+            <tr class="hover" [class.expandrow]=" grid.expandable.isExpandable && record.isExpanded" [class.expired]="isExpired(record)">
+                <ng-template ngFor let-col [ngForOf]="columns">
+                    <td (click)="col.id == grid.expandable.columnId  && toggleExpand(record)" [ngStyle]="col.style">
+                        <app-grid-column [grid]="grid" [rowNumber]="i" [record]="record" [col]="col"></app-grid-column>
+                    </td>
+                </ng-template>
+            </tr>
+            <tr class="hover" *ngIf="grid.expandable.isExpandable && record.isExpanded" class="expandDetail">
+                <td [colSpan]="columns.length" class="section">
+                    <div ctrl-factory [grid]="grid" [rowNumber]="i" [model]="grid.expandable.component" [record]="record" [col]="col">
+                    </div>
+                </td>
+            </tr>
+        </ng-template>
+
+    </tbody>
+</table>
+<div *ngIf="displayData.length < 1" class="no-data">
+    <img src="assets/img/NoDataFound.png" />
+</div>

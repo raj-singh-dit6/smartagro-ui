@@ -1,0 +1,43 @@
+.navbar {
+    position: inherit;
+    height: 70px;
+    /* padding: 35px 30px 10px 30px; */
+    border: none;
+    border-radius: 0;
+    background: white !important;
+    /* margin-left: -20px; */
+    -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 0px 0px !important;
+}
+
+.bean-style {
+    font-size: 19px;
+    padding-left: 2rem;
+    color: #666666;
+}
+
+
+
+.angle-down{
+    padding-left: 7rem;
+    margin-top: -1.5rem;
+}
+
+.right-side{
+ 
+    margin-top: -21px;
+    margin-bottom: -17px;
+    padding-top: 30px;
+  
+}
+.dashboard{
+    background: #1b2d41;
+    color: white;
+    border-bottom: 1px solid #313d4b;
+}
+
+.dropdown-item:hover{
+    background-color:#576575;
+    color:white;
+ }

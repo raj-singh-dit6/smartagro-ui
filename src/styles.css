@@ -1,0 +1,767 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* You can add global styles to this file, and also import other style files */
+
+/*
+    DEMO STYLE
+*/
+@import "https://fonts.googleapis.com/css?family=Roboto"; 
+:root {
+    --logo-background: rgb(88, 88, 88);
+    --separator: #dddddd87;
+    --sidebar-background: rgb(113, 113, 113);
+   --sidebar-ui-li-main-color:#000000;
+   --sidebar-ui-li-a-hover: rgb(41, 41, 41);
+   --sidebar-color:white;
+   --nav-header-background: rgb(216, 216, 216);
+   --nav-header-border:#6666664a;
+   --main-content-background: rgb(238, 243, 236);
+   --table-header-background : #dbeff5;
+   --table-even-row-background : #f6faf5; 
+   --table-border : #ccc;
+   --table-header-color :black;
+   --filter-background-color :#eef5eb;
+   --btn-color: rgb(88, 88, 88);
+   --modal-header-background:#28a745b0;
+   --delete-confirmation:rgb(243, 1, 33);   
+   --header-color:#dbeff5;
+   --green:#28a745b0;
+   --dark-green:#2c4b33
+
+ }
+
+
+ 
+ body {
+  font-family: 'Roboto';
+  font-size: 14px;
+  color:#333;
+}
+
+p {
+  font-family: 'Roboto';
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.7em;
+}
+
+.d-inline-block{
+  cursor: pointer;
+}
+
+ .row{
+  margin-right: 0px;
+  margin-left: 0px;
+  width: 100%;
+ }
+
+ .card {
+  margin-top: 20px;
+  height: 90%;
+}
+
+
+.card-header{
+  background-color: #edeff0;
+}
+.card-header button{
+  float: right;
+  font-size: 14px;
+  padding: 2px 5px 2px 5px;
+  border: 1px solid #cfd1d2;
+}
+.card-header  button i{
+  font-size: 12px;
+  vertical-align: middle;
+}
+
+/* ---------------------------------------------------
+   Table
+----------------------------------------------------- */
+table.grid{
+    width: 100%;
+    min-width: 700px;  
+    font-size: 14px
+ }
+ table.grid tr td {
+    padding :5px;
+    border :1px solid var(--table-border);
+ }
+ 
+ table.grid tr th {
+    padding : 5px;
+    font-weight: bold;
+    border :1px solid var(--table-border);
+    background-color: var(--table-header-background);
+    max-width:100%;
+    white-space:nowrap;
+ }
+ 
+ .fixed {
+    position: fixed; 
+    top: 0; 
+    z-index: 1;
+ }
+ 
+ .expandrow td{
+     background-color: #222222 !important;
+     color: #dddddd;
+     border-color: #2d3d28 !important;
+ }
+ 
+ .expandDetail .section {
+     padding: 2px !important;
+     background-color: #eeeeee;
+     border-color: #2d3d28 !important;
+ }
+ 
+ .no-data {
+     padding:30px;
+     width:100%;
+     border-top:none;
+     text-align:center;
+ }
+ 
+ 
+ table.grid tr:nth-child(even){
+     background-color: var(--table-even-row-background);
+ }
+ 
+ table.grid tr:nth-child(even).hover:hover{
+     background-color:rgb(41, 41, 41);
+     color:white;
+ }
+ 
+ table.grid  tbody tr.hover:hover{
+     background-color:rgb(41, 41, 41)!important;
+     color:white!important;
+   } 
+ 
+   .expired{
+     background-color:rgb(250, 230, 164) !important;
+   }
+
+   /** SPAN COLOURED BOX RELATED CSS **/
+.box{
+    display: inline-block;
+    padding: 3px 5px;
+    font-size: 12px;
+    border-radius: 2px;
+    color: #fff;
+    min-width: 25px;
+    text-align: center;
+}
+
+/** SPAN COLOURED BOX RELATED CSS ENDS HERE**/
+
+/** Font - Txt css **/
+.lg-dark-txt{
+  font-size: 16px !important;
+  font-weight: bold !important;
+}
+
+.lg-grey-txt{
+  font-size: 16px !important;
+  color: rgb(150, 150, 150) !important;
+}
+
+.lg-txt{
+  font-size:16px !important;
+}
+
+.md-dark-txt{
+  font-size: 12px !important;
+  font-weight: bold !important;
+}
+
+.md-grey-txt{
+  font-size: 12px !important;
+  color: grey !important;
+}
+
+.sm-dark-txt{
+  font-size: 10px;
+}
+
+/** Font - Txt css ends here **/
+
+
+.success-toast-class{
+    background-color: rgb(63,200,250,0.9);
+    position: relative;
+    overflow: hidden;
+    padding: 10px 10px 10px 10px;
+    color: #FFFFFF;
+    pointer-events: all;
+    cursor: pointer;
+  }
+
+  .error-toast-class{
+    background-color: rgb(255,5,5,0.9); 
+    position: relative;
+    overflow: hidden;
+    padding: 10px 10px 10px 10px;
+    color: #FFFFFF;
+    pointer-events: all;
+    cursor: pointer;
+  }
+
+  /** MODAL REALTED CSS **/
+
+  .modal-content {
+    border-radius: 0.5rem;
+    width: 120% !important;
+    border:0px;
+    box-shadow: 0 0 7px 1px #333;
+    -webkit-box-shadow: 0 0 7px 1px #333;
+    -moz-box-shadow: 0 0 7px 1px #333;
+  }
+  .modal-header{
+      background-color: #596574!important;
+      color: white;
+      padding: 0.8em 1rem 0.8rem 1.5rem;
+  }
+
+  .modal-header .close {
+    font-size:1.3rem;
+      color: white;
+  }
+  .modal-title{
+      line-height: initial;
+  }
+  .modal-body {
+    padding: 1rem 1.5rem;
+  }
+  .modal-footer{
+      border-top: 0px !important;
+      justify-content: flex-start;
+      padding: 1.5rem !important;
+      padding-bottom: 1rem !important;
+      background-color:#eee;
+      border-bottom-left-radius: 0.5rem;
+      border-bottom-right-radius: 0.5rem;
+  }
+
+   /** MODAL REALTED CSS  ENDS HERE **/
+
+
+/** BUTTON REALTED CSS **/
+.my-dropdown{
+  width: 100%;
+} 
+.my-dropdown .dropdown-btn{
+  width: 100%;
+  text-align: left;
+}
+.my-dropdown .dropdown-toggle::after{
+  float: right;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+
+    .btn-danger{
+        border-radius: 5rem;
+        color: white;
+        width: 120px;
+        margin-top: -10px;
+        color: #fff;
+        background-color: rgb(243, 1, 33);
+        border-color: rgb(243, 1, 33);
+        
+    }
+
+  .btn-primary {
+    border-radius: 5rem;
+    color:white;
+    min-width: 120px;
+    margin-top: -10px;
+    color: #fff;
+    background-color: #3eb2fb;
+    border-color: #3eb2fb;
+  }
+  
+  .btn-outline-dark{
+   background: white;
+  }
+
+  .btn-primary.disabled, .btn-primary:disabled{
+    border-radius: 5rem;
+    color:white;
+    width: 100px;
+    margin-top: -10px;
+    background-color: var(--btn-color);
+    border-color: var(--btn-color);
+        cursor: not-allowed;
+  }
+
+  .btn-secondary{
+    border-radius: 5rem;
+    color:white;
+    min-width: 120px;
+    margin-top: -10px;
+    background-color: #999999;
+    border-color: #999999
+  }
+  .btn-secondary.disabled, .btn-secondary:disabled{
+    border-radius: 5rem;
+    color:white;
+    width: 100px;
+    margin-top: -10px;
+    background-color: #999999;
+    border-color: #999999;
+    cursor: not-allowed;
+  }
+  
+
+ .btn-class-primary{
+  background-color: #3eb2fb;
+  border-color: #5382e0;
+  color: white;
+}
+
+.btn-class-primary:hover {
+    background-color: #3093d2;
+  }
+
+.btn-class-secondary{
+    background-color: #ffffff;
+    color: #6d6d6d;
+    border-color: #b3b3b3;
+}
+.btn-class-secondary:hover{
+    background-color: #e0dede;
+
+}
+  button.close{
+    outline: none!important;
+  }
+
+  .addBtn:hover {
+    background-color: #3093d2;
+  }
+
+  .addBtn {
+    background-color: #3eb2fb;
+    color: white;
+    border-radius: 5rem;
+    width: 100px;
+  }
+  
+  .icon {
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    font-size: .9em;
+    text-align: center;
+    padding: 7px!important;
+    color: #fff;
+    }
+
+
+    .whiteBtn {
+    background-color: white;
+    color: #3eb2fb;
+    border-radius: 5rem;
+    border:1px solid  #ced4da ;
+    }
+    
+    .whiteBtn:hover {
+    background-color: #3093d2;
+    color:white;
+    }
+
+    .blueBtn {
+        background-color: #3eb2fb;
+        color: white;
+        border-radius: 5rem;
+      }
+      
+      .blueBtn:hover {
+        background-color: #3093d2;
+      }
+
+      /** BUTTON REALTED CSS ENDS HERE **/
+
+
+      .input-group-addon{
+        border-color: rgba(197, 214, 222, 0.7);
+        font-size: 1rem;
+        font-weight: 600;
+        color: #6c7a86;
+        padding: .5rem .75rem;
+        line-height: 1.2;
+        border: 1px solid #ccc;
+        border-left: 0px;
+        border-radius: 0rem .25rem .25rem 0rem;
+        white-space: nowrap;
+        display: table-cell;
+      }
+    
+      .left-separator{
+        border-left: 1px solid var(--nav-header-border);
+        }  
+      
+      .right-separator{
+        border-right: 1px dotted var(--nav-header-border);
+      } 
+
+        .line-icon {
+          text-align: center;
+        }
+      .line-icon::before,
+      .line-icon::after {
+        width: 20%;
+        height: 1px;
+      
+        border-top: 1px solid #ccc; 
+      
+        display: inline-block;
+        content: '';
+      
+        padding-top: 0.5em; 
+      
+        margin-left: 5%; 
+        margin-right: 5%;
+  }
+g {
+        transform: translate(100, 100) !important;
+}
+
+.textDataLabel {
+  transform: none !important;
+  text-anchor: initial !important;
+  font-weight: bold;
+}
+
+
+/**  CHECKBOX RELATED CSS **/
+.checkmark {
+  background-color:white;
+  color:#7d7f7e;
+  font-size: 18px;
+  vertical-align: middle;
+  line-height: 15px;
+  margin-right: 5px;
+}
+.pure-checkbox{
+  cursor: auto !important;
+}
+/**  CHECKBOX RELATED CSS ENDS HERE**/
+
+ngb-modal-window.feed-class > div.modal-dialog {
+  margin: 0px;
+  margin-right: 3.9rem;
+  float: right;
+  width: 310px;
+  max-width: 310px;
+}
+
+
+
+
+/* ---------------------------------------------------
+   Table
+----------------------------------------------------- */
+table.grid{
+    width: 100%;
+    min-width: 700px;  
+    font-size: 14px
+ }
+ table.grid tr td {
+    padding :5px;
+    border :1px solid var(--table-border);
+ }
+ 
+ table.grid tr th {
+    padding : 5px;
+    font-weight: bold;
+    border :1px solid var(--table-border);
+    background-color: var(--table-header-background);
+ }
+ 
+ .fixed {
+    position: fixed; 
+    top: 0; 
+    z-index: 1;
+ }
+ 
+ .expandrow td{
+     background-color: #222222 !important;
+     color: #dddddd;
+     border-color: #2d3d28 !important;
+ }
+ 
+ .expandDetail .section {
+     padding: 2px !important;
+     background-color: #eeeeee;
+     border-color: #2d3d28 !important;
+ }
+ 
+ .no-data {
+     padding:30px;
+     width:100%;border:
+     1px solid #ccc;
+     border-top:none;
+     text-align:center;
+ }
+ 
+ 
+ table.grid tr:nth-child(even){
+     background-color: var(--table-even-row-background);
+ }
+ 
+ table.grid tr:nth-child(even).hover:hover{
+     background-color:rgb(41, 41, 41);
+     color:white;
+ }
+ 
+ table.grid  tbody tr.hover:hover{
+     background-color:rgb(41, 41, 41)!important;
+     color:white!important;
+   } 
+ 
+   .expired{
+     background-color:rgb(250, 230, 164) !important;
+   }
+
+   /** SPAN COLOURED BOX RELATED CSS **/
+.box{
+    display: inline-block;
+    padding: 3px 5px;
+    font-size: 12px;
+    border-radius: 2px;
+    color: #fff;
+    min-width: 25px;
+    text-align: center;
+    margin-left: 5px;
+}
+
+/** SPAN COLOURED BOX RELATED CSS ENDS HERE**/
+
+
+
+
+.success-toast-class{
+    background-color: rgb(63,200,250,0.9);
+    position: relative;
+    overflow: hidden;
+    padding: 10px 10px 10px 10px;
+    color: #FFFFFF;
+    pointer-events: all;
+    cursor: pointer;
+  }
+
+  .error-toast-class{
+    background-color: rgb(255,5,5,0.9); 
+    position: relative;
+    overflow: hidden;
+    padding: 10px 10px 10px 10px;
+    color: #FFFFFF;
+    pointer-events: all;
+    cursor: pointer;
+  }
+
+  /** MODAL REALTED CSS **/
+
+  .modal-content {
+    border-radius: 0.5rem;
+    width: 120% !important;
+    border:0px;
+    box-shadow: 0 0 7px 1px #333;
+    -webkit-box-shadow: 0 0 7px 1px #333;
+    -moz-box-shadow: 0 0 7px 1px #333;
+  }
+  .modal-header{
+      background-color: var(--modal-header-background)!important;
+      color: white;
+      padding: 0.8em 1rem 0.8rem 1.5rem;
+  }
+
+  .modal-header .close {
+    font-size:1.3rem;
+  }
+  .modal-title{
+      line-height: initial;
+  }
+  .modal-body {
+    padding: 1rem 1.5rem;
+  }
+  .modal-footer{
+      border-top: 0px !important;
+      justify-content: flex-start;
+      padding: 1.5rem !important;
+      padding-bottom: 1rem !important;
+      background-color:#eee;
+      border-bottom-left-radius: 0.5rem;
+      border-bottom-right-radius: 0.5rem;
+  }
+
+   /** MODAL REALTED CSS  ENDS HERE **/
+
+
+/** BUTTON REALTED CSS **/
+
+    .btn-danger{
+        border-radius: 5rem;
+        color: white;
+        width: 120px;
+        margin-top: -10px;
+        color: #fff;
+        background-color: rgb(243, 1, 33);
+        border-color: rgb(243, 1, 33);
+        
+    }
+
+  .btn-primary {
+    border-radius: 5rem;
+    color:white;
+    width: 120px;
+    margin-top: -10px;
+    color: #fff;
+    background-color: #3eb2fb;
+    border-color: #3eb2fb;
+  }
+  
+  .btn-outline-dark{
+   background: white;
+  }
+
+  .btn-primary.disabled, .btn-primary:disabled{
+    border-radius: 5rem;
+    color:white;
+    width: 100px;
+    margin-top: -10px;
+    background-color: var(--btn-color);
+    border-color: var(--btn-color);
+        cursor: not-allowed;
+  }
+
+  .btn-secondary{
+    border-radius: 5rem;
+    color:white;
+    width: 50px;
+    /* margin-top: -10px; */
+    background-color: #999999;
+    border-color: #999999
+  }
+  .btn-secondary.disabled,.btn-class-cancel:disabled{
+    border-radius: 5rem;
+    color:white;
+    width: 100px;
+    margin-top: -10px;
+    background-color: #999999;
+    border-color: #999999;
+    cursor: not-allowed;
+  }
+  
+
+ .btn-class-primary{
+  background-color: #3eb2fb;
+  border-color: #5382e0;
+  color: white;
+}
+
+.btn-class-primary:hover {
+    background-color: #3093d2;
+  }
+
+.btn-class-secondary{
+    background-color: #ffffff;
+    color: #6d6d6d;
+    border-color: #b3b3b3;
+}
+.btn-class-secondary:hover{
+    background-color: #e0dede;
+
+}
+  button.close{
+    outline: none!important;
+  }
+
+  .addBtn:hover {
+    background-color: #3093d2;
+  }
+
+  .addBtn {
+    background-color: #3eb2fb;
+    color: white;
+    border-radius: 5rem;
+    width: 100px;
+  }
+  
+  .icon {
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    font-size: .9em;
+    text-align: center;
+    padding: 7px!important;
+    color: #fff;
+    }
+
+
+    .whiteBtn {
+    background-color: white;
+    color: #3eb2fb;
+    border-radius: 5rem;
+    border:1px solid  #ced4da ;
+    }
+    
+    .whiteBtn:hover {
+    background-color: #3093d2;
+    }
+
+    .blueBtn {
+        background-color: #3eb2fb;
+        color: white;
+        border-radius: 5rem;
+      }
+      
+      .blueBtn:hover {
+        background-color: #3093d2;
+      }
+
+      /** BUTTON REALTED CSS ENDS HERE **/
+
+
+      .input-group-addon{
+        background-color: #f6f8fa;
+        border-color: rgba(197, 214, 222, 0.7);
+        font-size: 1rem;
+        font-weight: 600;
+        color: #6c7a86;
+        padding: .375rem .75rem;
+        line-height: 1.2;
+        border: 1px solid #ccc;
+        border-left: 0px;
+        border-radius: 0rem .25rem .25rem 0rem;
+        white-space: nowrap;
+        display: table-cell;
+      }
+    
+      .left-separator{
+        border-left: 1px solid var(--nav-header-border);
+        }  
+
+        .line-icon {
+          text-align: center;
+        }
+      .line-icon::before,
+      .line-icon::after {
+        width: 20%;
+        height: 1px;
+      
+        border-top: 1px solid #ccc; 
+      
+        display: inline-block;
+        content: '';
+      
+        padding-top: 0.5em; 
+      
+        margin-left: 5%; 
+        margin-right: 5%;
+      }
+
+
+  

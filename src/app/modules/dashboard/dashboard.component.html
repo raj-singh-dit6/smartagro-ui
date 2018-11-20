@@ -1,0 +1,225 @@
+<div class="row" style="background-color:#f6f6f6 ;border-top: 1px solid #ced2d7">
+  <!-- left part -->
+  <div class="container" style="width: 60%">
+
+
+    <div class="card" style="margin-top:20px;max-height: 450px">
+      <div class="card-header">
+        <b>Conditional (Ideal) profile of your current crop</b>
+      </div>
+      <div class="card-body row">
+        <div class="row">
+          <div class="col-4 right-separator">
+            <span class="lg-dark-txt">Crop :</span><span class="lg-grey-txt" style="margin-left: 10px">{{crop?.cropname}}</span>
+          </div>
+          <div class="col-8">
+            <div class="row">
+              <span class="lg-dark-txt">Seed : </span><span class="lg-grey-txt" style="margin-left: 10px">{{seed?.seedname}}</span>
+            </div>
+            <div class="row" style="border: solid 1px #dedede;margin-top:20px">
+              <div class="row">
+                <div class="col-6"><span class="md-dark-txt">N(Nitrogen) (Min) : </span><span class="md-grey-txt" style="margin-left: 10px">{{seed?.nvalueMin}}</span></div>
+                <div class="col-6"><span class="md-dark-txt">(Max) : </span><span class="md-grey-tx" style="margin-left: 10px">{{seed?.nvalueMax}}</span></div>
+              </div>
+              <div class="row">
+                <div class="col-6"><span class="md-dark-txt">P(Phosphorus) (Min) : </span><span class="md-grey-tx"
+                    style="margin-left: 10px">{{seed?.pvalueMin}}</span></div>
+                <div class="col-6"><span class="md-dark-txt">(Max) : </span><span class="md-grey-tx" style="margin-left: 10px">{{seed?.pvalueMax}}</span></div>
+              </div>
+              <div class="row">
+                <div class="col-6"><span class="md-dark-txt">K(Potassium) (Min) : </span><span class="md-grey-tx" style="margin-left: 10px">{{seed?.reletivehumidityMin}}</span></div>
+                <div class="col-6"><span class="md-dark-txt">(Max) : </span><span class="md-grey-tx" style="margin-left: 10px">{{seed?.reletivehumidityMax}}</span></div>
+              </div>
+              <div class="row">
+                <div class="col-6"><span class="md-dark-txt">Humidity (Min) : </span><span class="md-grey-tx" style="margin-left: 10px">{{seed?.humidityMin}}</span></div>
+                <div class="col-6"><span class="md-dark-txt">(Max) : </span><span class="md-grey-tx" style="margin-left: 10px">{{seed?.humidityMax}}</span></div>
+              </div>
+              <div class="row">
+                <div class="col-6"><span class="md-dark-txt">Relative Humidity (Min) : </span><span class="md-grey-tx"
+                    style="margin-left: 10px">{{seed?.seedname}}</span></div>
+                <div class="col-6"><span class="md-dark-txt">(Max) : </span><span class="md-grey-tx" style="margin-left: 10px">{{seed?.seedname}}</span></div>
+              </div>
+              <div class="row">
+                <div class="col-6"><span class="md-dark-txt">Soil Moisture (Min) : </span><span class="md-grey-tx"
+                    style="margin-left: 10px">{{seed?.soilmoistureMin}}</span></div>
+                <div class="col-6"><span class="md-dark-txt"> (Max) : </span><span class="md-grey-tx" style="margin-left: 10px">{{seed?.soilmoistureMax}}</span></div>
+              </div>
+              <div class="row">
+                <div class="col-6"><span class="md-dark-txt">Temperature (Min) : </span><span class="md-grey-tx" style="margin-left: 10px">{{seed?.tempretureMin}}</span></div>
+                <div class="col-6"><span class="md-dark-txt"> (Max) : </span><span class="md-grey-tx" style="margin-left: 10px">{{seed?.tempretureMax}}</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" style="margin-top:20px;max-height: 200px">
+        <div class="card-header">
+          <b>NPK profile of your curent crop</b>
+        </div>
+        <div class="card-body row">
+          <div class="row">
+              <div class="row" style="margin-top:20px">
+                  <div class="col-4 overview acitveJob">
+                    <div class="row">
+                      <div class=" number">{{sensordata?.nvalue}} %</div>
+                      <div class="col content">
+                        <div>N (Nitrogen)</div>
+                      </div>
+                    </div>
+            
+                  </div>
+                  <div class="col-4 left-gap overview  completedJob">
+                    <div class="row">
+                      <div class=" number">{{sensordata?.pvalue}} %</div>
+                      <div class="col content">
+                        <div>P (Phosphorus)</div>
+                      </div>
+                    </div>
+            
+                  </div>
+                  <div class="col-4 left-gap overview pendingApproval">
+                    <div class="row">
+                      <div class=" number">{{sensordata?.kvalue}} %</div>
+                      <div class="col content">
+                        <div>K (Pottasium)</div>
+                      </div>
+                    </div>
+            
+                  </div>
+                </div>
+          </div>
+        </div>
+    </div>
+
+    
+
+
+    <div class="card">
+      <div class="card-header">
+        <b>Full profile of your current crop</b>
+      </div>
+      <div class="card-body row">
+        <div class="row">
+          <div class="col-12">
+            <b style="margin-left: 4rem">N - Nitrogen ( {{sensordata?.nvalue}} %)</b>
+
+            <ngx-charts-bar-horizontal [view]="[200, 70]" [scheme]="{domain: ['#ff0000']}" [results]="nvalue"
+              [gradient]="false" [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel"
+              [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" [tooltipDisabled]="true"
+              [showDataLabel]="true" [roundEdges]="false" style="margin-left: -44px;margin-top: -10px;">
+            </ngx-charts-bar-horizontal>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <b style="margin-left: 4rem">P - Phosphorus ( {{sensordata?.pvalue}} %)</b>
+
+            <ngx-charts-bar-horizontal [view]="[200, 70]" [scheme]="{domain: ['#269f42']}" [results]="pvalue"
+              [gradient]="false" [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel"
+              [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" [tooltipDisabled]="true"
+              [showDataLabel]="true" [roundEdges]="false" style="margin-left: -44px;margin-top: -10px;">
+            </ngx-charts-bar-horizontal>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <b style="margin-left: 4rem">K - Potassium ( {{sensordata?.kvalue}} %)</b>
+
+            <ngx-charts-bar-horizontal [view]="[200, 70]" [scheme]="{domain: ['#331805']}" [results]="kvalue"
+              [gradient]="false" [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel"
+              [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" [tooltipDisabled]="true"
+              [showDataLabel]="true" [roundEdges]="false" style="margin-left: -44px;margin-top: -10px;">
+            </ngx-charts-bar-horizontal>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <b style="margin-left: 4rem">Soil Moisture ( {{sensordata?.soilmoisture}} %)</b>
+
+            <ngx-charts-bar-horizontal [view]="[200, 70]" [scheme]="{domain: ['#e86729']}" [results]="soilmoisture"
+              [gradient]="false" [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel"
+              [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" [tooltipDisabled]="true"
+              [showDataLabel]="true" [roundEdges]="false" style="margin-left: -44px;margin-top: -10px;">
+            </ngx-charts-bar-horizontal>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <b style="margin-left: 4rem">Relative Humidity ( {{sensordata?.relativehumidity}} %)</b>
+
+            <ngx-charts-bar-horizontal [view]="[200, 70]" [scheme]="{domain: ['#b5cfea']}" [results]="relativehumidity"
+              [gradient]="false" [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel"
+              [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" [tooltipDisabled]="true"
+              [showDataLabel]="true" [roundEdges]="false" style="margin-left: -44px;margin-top: -10px;">
+            </ngx-charts-bar-horizontal>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <b style="margin-left: 4rem">Humidity ( {{sensordata?.humidity}} %)</b>
+
+            <ngx-charts-bar-horizontal [view]="[200, 70]" [scheme]="{domain: ['#1a75d3']}" [results]="humidity"
+              [gradient]="false" [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel"
+              [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" [tooltipDisabled]="true"
+              [showDataLabel]="true" [roundEdges]="false" style="margin-left: -44px;margin-top: -10px;">
+            </ngx-charts-bar-horizontal>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <b style="margin-left: 4rem">Temperature ( {{sensordata?.tempreture}} degree Celcius)</b>
+
+            <ngx-charts-bar-horizontal [view]="[200, 70]" [scheme]="{domain: ['#d0d31ac9']}" [results]="tempreture"
+              [gradient]="false" [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel"
+              [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" [tooltipDisabled]="true"
+              [showDataLabel]="true" [roundEdges]="false" style="margin-left: -44px;margin-top: -10px;">
+            </ngx-charts-bar-horizontal>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- right part -->
+  <div style="background:#192c42;width: 40%;color: white">
+    <div class="right-heading">
+      Related Videos
+    </div>
+    <div style="padding: 9px 42px 0px 32px;">
+      <div class="right-graph-section">
+        <div class="row">
+          <div class="col-12">
+            <div style="margin-left: -15px">
+              <div style="overflow: scroll;height: 600px">
+                <app-youtube-list></app-youtube-list>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 2rem">
+        <div class="right-graph-section">
+          <div class="row">
+            <div class="col-12">
+              <div class="card" style="margin-left: -15px">
+                <div class="card-header">
+                  <b>Articles</b>
+                </div>
+                <div class="card-body" style="overflow: scroll;">
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

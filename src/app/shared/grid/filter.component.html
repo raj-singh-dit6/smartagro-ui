@@ -1,0 +1,52 @@
+<div style="font-weight: normal !important;" style="width: 100%">
+
+
+    <!--Filter  Text Type-->
+    <div *ngIf="type !='multiselect' && type !='datefield'" class="form-input-icon form-input-icon-right">
+        <div class="input-group">
+            <input type="text" class="form-control" sid="l7" (keyup)="filterColumn()" [(ngModel)]="col.filterText">
+        </div>
+    </div>
+
+    <!--multiselect type-->
+    <!-- <div *ngIf="type =='multiselect'">
+        <app-select
+             [multiple]="false"
+             [items]="items"
+             [(active)]="col.filterText"
+              [id]="col.filter.multiselectId"
+             [value]="col.filter.multiselectValue"
+             [dropdownSearchable]="col.filter.multiselectDropdownSearchable"
+             (data)="onChange($event)"
+             [placeholder]="col.placeholder"
+             (expand)="onExpand($event)"
+             [disabled]="disabled" >
+        </app-select>
+    </div> -->
+
+    <!-- <div *ngIf="type =='singleSelect'">
+        <select [id]="col.filter.multiselectId" [value]="col.filter.multiselectValue">
+            <option *ngFor="" value="" [selected]> </option>
+        </select>
+    </div> -->
+
+
+
+    <!--datefield type-->
+    <div class="row" *ngIf="type =='datefield'">
+        <div class="input-group">
+            <input class="form-control" placeholder="yyyy-mm-dd" name="datefield" [(ngModel)]="col.filterText" ngbDatepicker #d="ngbDatepicker"
+                (ngModelChange)="onChange($event)" (click)="d.toggle(); $event.stopPropagation();" (document:click)="closeFix($event, d)"
+                readonly>
+            <div class="input-group-addon" (click)="d.toggle(); $event.stopPropagation();">
+                <img src="assets/img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;" />
+            </div>
+            <div class="input-group-addon" (click)="clearDate();">
+                <i class="far fa-sync"></i>
+              </div>
+        </div>
+
+    </div>
+
+
+</div>

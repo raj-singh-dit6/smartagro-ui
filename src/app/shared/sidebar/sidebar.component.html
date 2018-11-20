@@ -1,0 +1,33 @@
+<nav id="sidebar">
+        <div class="sidebar-header">
+            <img class="" src="../../../assets/img/logo/logo.png">
+        </div>
+        <!-- sidebar content -->
+        <div>
+            <ul class="list-unstyled" style="text-align: center;margin-top: 20px;">
+                <li>
+                    <div [routerLink]="['../smartagro/dashboard']" aria-expanded="false" (click)="onLinkClick('dashboard')"
+                        routerLinkActive="menu-active" class="container" [routerLinkActiveOptions]="{exact:true}">
+                        <div class="far fa-chart-pie" style="font-size: 25px; width: 100%"></div>
+                        <div class="sidebar-content-heading">DASHBOARD</div>
+                    </div>
+                </li>
+                <hr class="sidebar-line">
+                <li>
+                    <div  [routerLink]="['../smartagro/prediction']" aria-expanded="false" (click)="onLinkClick('spend')"
+                        routerLinkActive="menu-active" class="container" [routerLinkActiveOptions]="{exact:true}">
+                        <div class="far fa-donate" style="font-size: 25px; width: 100%"></div>
+                        <div class="sidebar-content-heading">Predictions</div>
+                    </div>
+                </li>
+                <hr class="sidebar-line">
+                <li>
+                    <div [routerLink]="['../smartagro/profile']" (click)="onLinkClick('Orders')" routerLinkActive="menu-active"
+                        class="container" [routerLinkActiveOptions]="{exact:true}" aria-expanded="false">
+                        <div class="fal fa-list-alt" style="font-size: 25px; width: 100%"></div>
+                        <div class="sidebar-content-heading">PROFILE</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>

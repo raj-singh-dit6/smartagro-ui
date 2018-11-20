@@ -1,0 +1,246 @@
+.bg {
+  /* The image used */
+  background-image: url("../../assets/img/smartagro/login_background.png");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.page-center {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .page-center-in {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 20px 0;
+  }
+
+  #login-container {
+    height: 100vh;
+    // line-height: 1.4 !important;
+  }
+
+    .form-control{
+      border: solid 0px rgba(197, 214, 222, 0.7);
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      color: #343434 !important;
+      background-color: #Eff6EC;
+  }
+
+
+  .form-control.ng-dirty.ng-invalid {
+    background-color: #fff6f6;
+    border-color: #fa424a;
+    color: #fa4afa;
+  }
+
+  .error-message {
+    color: #fa424a;
+  }
+
+  .sign-in-box {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0px 0px 6px 2px #C6C3C3;
+
+    .sign-avatar {
+      width: 80px;
+      height: 80px;
+      margin: 0;
+
+      img {
+        border-radius: 0;
+      }
+    }
+
+    button[type='submit'] {
+      width: 100%;
+      // margin: 0 9.5rem;
+      height: 50px;
+    }
+  }
+
+  // #sign-in-logo {
+  //   padding: 20px 20px 0px;
+  //   // img {
+  //     // height: 80px;
+  //   // }
+  // }
+  #logoImg {
+    display: block ;
+    margin: 0 auto ;
+    height :55px;
+  }
+
+  #sign-in-logo .logo {
+      padding: 15px;
+      width: 100%;
+      border-radius: 10px 10px 0 0;
+      background-color: #0392ce;
+
+  }
+
+  .signin-form {
+      padding: 20px;
+      padding-left: 40px;
+      padding-right: 40px;
+
+    .form-group {
+      margin: 1rem 0;
+    }
+
+    input[type="text"] {
+      font-family:roboto !important; //Safari font issue fix
+    }
+  }
+
+  .sign-in-title {
+    /*20/16*/
+    font-size: 1.25rem;
+    text-align: center;
+    margin: .5rem;
+    // line-height: normal;
+  }
+
+  #project-title {
+    line-height: 80px;
+  }
+
+  #login-logo {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 20px;
+
+    img {
+      width: 50px;
+    }
+  }
+
+
+  .btn.btn-rounded {
+    border-radius: .4rem;
+  }
+  .btn {
+    border: solid 1px #0392ce;
+    background: #0392ce;
+    color: #fff;
+    display: inline-block;
+    padding: .375rem 1rem;
+    font-weight: 540;
+    // font-size: 1.45rem;
+    // line-height: 1.5;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    font-family: 'Proxima Nova', sans-serif;
+  }
+  .btn:disabled, .btn.disabled {
+    background-color: #dbe4ea;
+    border-color: #dbe4ea;
+    color: #6c7a86;
+    cursor: not-allowed;
+    opacity: .65;
+    box-shadow: none;
+  }
+
+  input[type='checkbox'] {
+    margin-left:0px;
+    margin-top:0px;
+  }
+
+  span {
+    font-size: 14px;
+  }
+
+  @media only screen and (max-width: 500px) {
+    .sign-in-box {
+      button[type='submit'] {
+        margin: 0;
+        width: 100%;
+      }
+    }
+
+    #sign-in-logo {
+      img {
+        height: 3.5rem;
+      }
+    }
+  }
+
+
+  /*sign in form icon placeholder*/
+
+  .signin-form .form-group {
+    position:relative;
+  }
+
+  .signin-form input[type="text"], .signin-form input[type="password"] {
+    text-indent:35px;
+    padding:12px 10px;
+  }
+
+  .signin-form .fa-user-circle, .signin-form .fa-lock {
+    position: absolute;
+    top: 21px;
+    left: 15px;
+    font-size: 15px;
+    color:#999;
+  }
+
+  .signin-form .fa-lock {
+    top:15px;
+  }
+
+
+
+  /*end of sign in icon*/
+
+  @media only screen and (max-width: 899px) {
+    #forgot {
+      padding-left: 0px !important;
+    }
+  }
+
+  @media only screen and  (max-width: 500px){
+    .page-center-in{
+      display: contents;
+      padding:unset;
+    }
+
+    .container-fluid {
+      padding-right: 0px;
+      padding-left: 0px;
+    }
+
+    div.page-center{
+      background-color: white!important;
+    }
+
+    // #logoImg{
+    //   margin-top : 5.5rem ;
+    // }
+
+    .sign-in-box{
+      box-shadow: none;
+      max-width: none;
+    }
+
+    #sign-in-logo .logo {
+      border-radius: 0;
+    }
+  }

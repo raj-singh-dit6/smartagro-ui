@@ -1,0 +1,86 @@
+<div class="user">
+  
+    <div class=" dropdown input-group"  *ngIf="disabled">
+        <input class="form-control ng-untouched ng-pristine ng-valid" placeholder="Select Date Range..." type="text" 
+        style="border-right: 0px; background-color: #cccccc"
+        [ngModel]="dateString" disabled>
+        <div _ngcontent-c3="" class="input-group-addon" style="background-color: #cccccc" >
+          <span _ngcontent-c3="" aria-hidden="true">
+            <i class="far fa-calendar-alt"></i>
+          </span>
+        </div>
+  </div>
+
+  <div class=" dropdown input-group" (click)="toggle()" *ngIf="!disabled">
+    <input class="form-control ng-untouched ng-pristine ng-valid" placeholder="Select Date Range..." type="text" style="border-right: 0px"
+      [ngModel]="dateString" disabled>
+    <div _ngcontent-c3="" class="input-group-addon" >
+      <span _ngcontent-c3="" aria-hidden="true">
+        <i class="far fa-calendar-alt"></i>
+      </span>
+    </div>
+  </div>
+
+  <!-- <div class="dropdown input-group" (click)="toggle()">
+    <div class="" id="dropdownMenuButton"  style="font-size: 14px;color: #666666;padding-top: 5px; padding-left: 10px">{{dateString}}</div>
+   </div> -->
+  <div class="dropdown-menu dropdown-menu-right" [class.show]="show" aria-labelledby="dropdownMenuButton" style="border: 1px solid;">
+    <div class="inline-row">
+      <table style="border-right: 1px solid;">
+        <tr>
+          <td>
+            <div class="row" style="background: #eeeeee;color: black ;border-bottom: 2px solid #eeeeee;">
+              <div class="col-6">
+                <div style="padding-top: 10px ;padding-bottom: 10px">
+                  <span style="font-weight: bold">Start</span>
+                  <div class=" dateBox">{{fromDateString}}</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div style="padding-top: 10px ;padding-bottom: 10px">
+                  <span style="font-weight: bold">To</span>
+                  <div class="dateBox">{{toDateString}}</div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="column">
+              <ngb-datepicker #dp (select)="onDateSelection($event)" [dayTemplate]="t" [displayMonths]="displayMonths" [navigation]="navigation"
+                [showWeekNumbers]="showWeekNumbers" style="border: none !important">
+              </ngb-datepicker>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <div class="column selector">
+        <!-- <h5 style="text-align: center;margin-top:-19px">
+            Today
+          </h5> -->
+        <!-- <hr> -->
+        <div class="form-group">
+          <div class="fixed-date-range"  [ngClass]="fixedDateRangeTitle =='Today' ? 'selected':''" (click)='onFixedDateRange("Today",0)'>Today</div>
+          <div class="fixed-date-range"  [ngClass]="fixedDateRangeTitle =='Last 7 Days' ? 'selected':''"(click)='onFixedDateRange("Last 7 Days",7)'>Last 7 Days</div>
+          <div class="fixed-date-range"  [ngClass]="fixedDateRangeTitle =='Last 30 Days' ? 'selected':''"(click)='onFixedDateRange("Last 30 Days",30)'>Last 30 Days</div>
+          <div class="fixed-date-range"  [ngClass]="fixedDateRangeTitle =='Last 3 Months' ? 'selected':''"(click)='onFixedDateRange("Last 3 Months",90)'>Last 3 Months</div>
+          <div class="fixed-date-range"  [ngClass]="fixedDateRangeTitle =='Last 6 Months' ? 'selected':''"(click)='onFixedDateRange("Last 6 Months",180)'>Last 6 Months</div>
+          <div class="fixed-date-range"  [ngClass]="fixedDateRangeTitle =='Last 1 Year' ? 'selected':''"(click)='onFixedDateRange("Last 1 Year",365)'>Last 1 Year</div>
+        </div>
+        <button type="button" class="btn button cancel" (click)="clear();">Clear</button>
+        <button type="button" class="btn button apply" (click)="apply();">APPLY</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #t let-date="date" let-focused="focused">
+  <span class="custom-day" [class.focused]="focused" [class.range]="isFrom(date) ||isTo(date)||isInside(date)|| isHovered(date)"
+    [class.from]="isFrom(date)" [class.to]="isTo(date)" [class.sunday]="isSunday(date) && (isInside(date) || isHovered(date)) "
+    [class.monday]="isMonday(date) && (isInside(date) || isHovered(date))" [class.faded]="(isHovered(date) || isInside(date)) && (!isSunday(date) && !isMonday(date))"
+    [class.selectTo]=" (!isFrom(date) && !isInside(date) && !isHovered(date) && fromDate != null && toDate ==null)" (mouseenter)="hoveredDate = date"
+    (mouseleave)="hoveredDate = null">
+    {{ date.day }}
+  </span>
+</ng-template>

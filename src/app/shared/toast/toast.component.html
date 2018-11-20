@@ -1,0 +1,13 @@
+<div #toastcontainer class="container-fluid">
+  <div class="toast-c">
+    <div *ngIf="message" class="toast-message" >
+      <i *ngIf="title==='Error'" class="far fa-times-circle" aria-hidden="true"></i> 
+      <i *ngIf="title==='Success'" class="far fa-check-circle" aria-hidden="true"></i> 
+        {{ message }}
+    </div>
+    <div class="toast-cancel" >
+      <a (click)="remove()">
+        <i class="far fa-times" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>

@@ -1,0 +1,15 @@
+<!--Simple Text-->
+<div *ngIf="col.type=='text'">
+    <span  style="display:block;max-width:220px;word-wrap:break-word;">
+        {{col.render!=undefined? col.render(record,rowNumber, grid,grid.parent):record[col.id] }}
+    </span>
+</div>
+
+<!--Custom Component-->
+<div *ngIf="col.type=='custom'" ctrl-factory 
+[grid]="grid" 
+[rowNumber]="rowNumber" 
+[model]="col['component']" 
+[record]="record"
+    [col]="col">
+</div>

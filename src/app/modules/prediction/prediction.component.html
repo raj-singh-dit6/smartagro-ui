@@ -1,0 +1,40 @@
+<div class="main-containter" style="background-color:#f6f6f6 ;border-top: 1px solid #ced2d7">
+  <div>
+    <div class="main-inner-container" style="padding: 15px">
+      <div class="home-row">
+        <div class="home-row-inner">
+          <span class="heading">Predictions</span>
+
+          <div class="form-group">
+              <input type="number" class="form-control" placeholder="Soil Health Card ID" [(ngModel)]="searchKey" maxlength="50">
+          </div>
+          <button type="button" class="btn whiteBtn" [disabled]="disableButton" (click)="openSaveModal()" style="float:right;font-size: 0.9rem;">
+            <i class="far fa-save"></i>
+            <span style="margin-left:3px">Search</span>
+          </button>
+        </div>
+      </div>
+      <div class="home-row">
+        <div class="home-row-inner" style="min-height: 600px;text-align: left !important;font-size: 16px; ">
+            <div class="card">
+                <div class="card-header">
+                   <strong> The Ideal Crops based on Your Soil Health Card Id </strong>
+                </div>
+              </div>
+            <div class="col-10" *ngFor="let crop of cropNames;  let i = index" style="margin-left:50px;background-color:#97dcb0">
+
+                <div class="card">
+                  <div class="card-header">
+                     <strong> {{ (i+1) + ".  "+crop}} </strong>
+                  </div>
+                </div>
+                <!-- <h4></h4> -->
+            </div>
+            <div *ngIf="cropNames.length === 0" class="no-data">
+                <img src="../../../assets/img/NoDataFound.png" />
+            </div> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

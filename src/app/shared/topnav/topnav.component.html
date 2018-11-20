@@ -1,0 +1,36 @@
+<nav class="navbar">
+    <div class="row">
+      <div class="col-4">
+        <div class="form-control-static">
+          <!-- <div class="input-group">
+            <input type="text" class="form-control" [ngbTypeahead]="filteredAllCrops" placeholder="Start typing Crop Name..."
+              [(ngModel)]="selectedCrop" (ngModelChange)="onSelectedCrop()" [editable]="false" #cropInput=ngbTypeahead
+              [ngbTypeahead]="cropSearch" [inputFormatter]="formatter" [resultTemplate]="rt" (focus)="onFocus($event)"
+              style="border-right:0px">
+            <div class="input-group-addon" (click)="clearCrop()">
+              <span aria-hidden="true">
+                <i class="fal fa-times"></i>
+              </span>
+            </div>
+            <ng-template #rt let-r="result" let-t="term">
+              {{r.cropname}}
+            </ng-template>
+          </div> -->
+        </div>
+      </div>
+      <div class="col-4 ">
+        <!-- <app-daterange ></app-daterange> -->
+      </div>
+      <div class="col-4 right-side ">
+  
+        <div ngbDropdown class="d-inline-block">
+          <span class="angle-down" id="dropdownBasic1" ngbDropdownToggle>{{userDisplayName}}</span>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <button class="dropdown-item" (click)="logout()" style="padding-left:15px">
+              <i class="fas fa-power-off"></i>
+              &nbsp;Logout</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>

@@ -1,0 +1,55 @@
+<div class="page-center bg" id="login-container">
+    <div class="page-center-in">
+        <div class="container-fluid">
+            <form class="sign-in-box" #form="ngForm" novalidate>
+                <div id="sign-in-logo">
+                    <div class="logo">
+                        <img src="../../assets/img/logo/logo.png" height="80" width="150">
+                    </div>
+                </div>
+                <div class="signin-form">
+                    <div class="form-group" style="padding-top: 5px">
+                        <span class="fas fa-user-circle"></span>
+                        <input type="text" class="form-control username" placeholder="Username" #username="ngModel"
+                            name="username" required maxlength="25" [(ngModel)]="login.username" style="background-color: #edeff0 !important" />
+                        <small class="text-muted error-message" [style.visibility]="username?.errors?.required && username.dirty ? 'visible' : 'hidden'">Username
+                            must not be empty</small>
+                    </div>
+                    <div class="form-group">
+                        <span class="fas fa-lock"> </span>
+                        <input type="password" class="form-control password" placeholder="Password" #password="ngModel"
+                            name="password" required maxlength="25" [(ngModel)]="login.password" style="background-color: #edeff0 !important" />
+                        <small class="text-muted error-message" [style.visibility]="password?.errors?.required && password.dirty ? 'visible' : 'hidden'">Password
+                            must not be empty</small>
+                    </div>
+                    <header class="sign-in-title error-message" *ngIf="showErrorMessage">Login Failed</header>
+                    <button id="btn-submit" type="submit" (click)="onLoginFormSubmit(form)" class="btn btn-rounded">SIGN
+                        IN</button>
+
+                    <div class="row" style="margin-top: 25px;">
+                        <!-- <div class="checkbox col" style="min-width:140px">
+                            <i class="checkmark fal" [class.fa-check-square]="login.remember" [class.fa-square]="!login.remember"
+                                (click)="login.remember = !login.remember" style="cursor: pointer;"></i>
+                            <span style="color: #939393">&nbsp;Remember me</span>
+                        </div> -->
+
+                        <!-- <div class="col">
+                            <span id="forgot" style="float:right;color: #939393">
+                                <a href="https://iforgot.phototype.com:9251/showLogin.cc" class="u-hover">Forgot
+                                    Password?</a>
+                            </span>
+                        </div> -->
+                    </div>
+                    <div id="login-logo">
+                        <div class='line-icon'>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--.page-center-->
+<iframe id="receiver" [src]="ssoURL" width="400" height="200" style="display:none">
+    <p>Your browser does not support iframes.</p>
+</iframe>
